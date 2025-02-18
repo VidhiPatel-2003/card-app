@@ -89,3 +89,9 @@ font-size: x-large;}
   color:white;
   box-shadow: grey;
 }
+
+.hide-button{width: 100%;
+text-align: end;
+display:none;
+}
+.card:hover .hide-button{display: inline-block;}
