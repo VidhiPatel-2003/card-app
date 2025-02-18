@@ -1,0 +1,14 @@
+.footer{
+    color:white;
+    background-color: black;
+    border: 1px solid black;
+    gap:5px;
+    position :sticky;
+    line-height:30px;
+    margin-top:10px;
+    border:1px solid grey;
+    
+}
+.class1{
+    margin:10px;
+}
