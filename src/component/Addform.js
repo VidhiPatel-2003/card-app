@@ -1,6 +1,8 @@
 import { useFormik } from "formik";
 import React from "react";
 import { signUpSchema } from "./schemas/Main";
+import { useDispatch } from "react-redux";
+import { addItem } from "./Slice/Datamanagement";
 
 const initialValues = {
   title: "",
@@ -9,7 +11,7 @@ const initialValues = {
   image: "",
 };
 
-const Addform = ({ visible, addItem }) => {
+const Addform = ({ visible }) => {
   const { values, handleSubmit, handleChange, handleBlur, errors, touched } =
     useFormik({
       initialValues: initialValues,
@@ -19,9 +21,11 @@ const Addform = ({ visible, addItem }) => {
         alert("you clicked submit button");
         visible();
         action.resetForm();
-        addItem(values);
+        dispatch(addItem(values));
       },
     });
+
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -100,7 +104,7 @@ const Addform = ({ visible, addItem }) => {
             ) : (
               ""
             )}
-            <input type="submit" />
+            <button type="submit">Submit</button>
           </form>
         </div>
       </div>
